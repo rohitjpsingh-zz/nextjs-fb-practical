@@ -1,68 +1,74 @@
 import Head from 'next/head'
+import Link from 'next/link'
+
 
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
-        <title>Create Next App</title>
+        <title>Welcome Home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
+      <h1 className="title">
+        Welcome Form
+      </h1>
 
         <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
+          Fill up the form{' '}
         </p>
 
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
+        <div className="flex flex-wrap items-center justify-around max-w-4xl sm:w-full">
+          
+        <form id="register" class="text-sm m-8 xs:p-4 sm:p-4 md:p-8 lg:p-8" method="POST" action="/register">
 
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
+          <div className="relative border rounded mb-4 shadow appearance-none label-floating">
+              <input className="w-full py-2 px-3 text-black leading-normal rounded" id="name" name="name" type="text" placeholder="Name" />
+          </div>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
+          <div className="relative border rounded mb-4 shadow appearance-none label-floating">
+              <input className="w-full py-2 px-3 text-black leading-normal rounded" id="minage" name="minage" type="number" placeholder="Min Age" />
+          </div>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          <div className="relative border rounded mb-4 shadow appearance-none label-floating">
+              <input className="w-full py-2 px-3 text-black leading-normal rounded" id="maxage" name="maxage" type="number" placeholder="Max Age" />
+          </div>
+
+          <div className="relative rounded mb-4 appearance-none flex items-center">
+              <input className="py-2 px-3 text-black" id="male" name="gender" type="radio" /> Male
+              <input className="py-2 px-3 text-black rounded ml-2" id="female" name="gender" type="radio" /> Female
+          </div>
+
+          <div className="relative border rounded mb-4 shadow appearance-none label-floating">
+              <select className="w-full py-2 px-3 text-black leading-normal rounded" id="country" name="country" >
+                <option value="">Select Country</option>
+                <option value="india">India</option>
+                <option value="usa">USA</option>
+              </select>
+          </div>
+
+          <div className="relative border rounded mb-4 shadow appearance-none label-floating">
+              <select className="w-full py-2 px-3 text-black leading-normal rounded" id="city" name="city" >
+                <option value="">Select City</option>
+                <option value="surat">Surat</option>
+                <option value="ahemdabad">Ahemedabad</option>
+              </select>
+          </div>
+
+          <div className="flex flex-wrap py-2 items-center justify-evenly">
+              <div className="sm:w-full md:w-1/2 lg:w-1/2 xl:w-1/2 h-12 text-center align-baseline">
+                  <input className="bg-black hover:bg-white hover:text-black text-white w-full py-2 px-4 rounded" type="submit" value="Register" />
+              </div>
+              <div className="sm:w-full md:w-1/2 lg:w-1/2 xl:w-1/2 h-12 text-center align-baseline">
+                  <a className="inline-block align-baseline text-gray-400 hover:text-white" href="#" onclick="document.getElementById('register').reset(); return false;">
+                      Clear Form
+                  </a>
+              </div>
+          </div>
+
+        </form>
+        
         </div>
       </main>
 
